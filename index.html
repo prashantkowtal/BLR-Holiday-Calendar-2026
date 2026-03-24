@@ -95,7 +95,7 @@ const nextFlexi=FLEXI.filter(h=>daysUntil(h)>=0).sort((a,b)=>daysUntil(a)-daysUn
 const banners=document.getElementById('banners');
 function makeBanner(h,type){
   const d=daysUntil(h);
-  const label=type==='fixed'?'Next fixed holiday':'Next flexi-fixed option';
+  const label=type==='fx'?'Next fixed holiday':'Next flexi-fixed option';
   return `<div class="banner ${type}"><div class="blabel">${label}</div><div class="bdays">${d===0?'Today':d===1?'Tomorrow':d+' days'}</div><div class="bname">${h.name}</div><div class="bdate">${fmt(h)}</div></div>`;
 }
 if(nextFixed)banners.innerHTML+=makeBanner(nextFixed,'fx');
